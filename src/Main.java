@@ -29,11 +29,27 @@ public class Main
                 }
                 bf1.close();
                 System.out.println("\n\nELEMENTS --> " + x.Flyable.size() + "\nVAL ---> " + x.Flyable.get(1));
+                checkStatusWeather(x);            
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } catch (FileNotFoundException e) {
             System.out.println("File does not exist");
+        }
+        
+    }
+
+    public static void checkStatusWeather(Tower t1)
+    {
+        WeatherTower wt = new WeatherTower();
+        int i = t1.sizeAir;
+        int j = 1;
+        while (j <= i)
+        {
+            if (wt.getWeather(j, t1) == 0)
+                j++;
+            else
+                break;
         }
     }
 }
