@@ -14,8 +14,8 @@ public class Coordinates
         Height = this.Height;
     }*/
 
-    public Integer[] cords;
-    public Integer[] getCoordByKey(Integer key, Tower tower)
+    public int[] cords;
+    public int[] getCoordByKey(Integer key, Tower tower)
     {
         String[] coords;
         if (tower.Flyable.get(key).toString() != null)
@@ -23,12 +23,11 @@ public class Coordinates
             naming = tower.Flyable.get(key).toString().split(":")[0];
             String [] mas1 = tower.Flyable.get(key).split(":");
             coords = mas1[1].split(" ");
-            System.out.println("TREEE " + coords[0]);
-            cords[0] = Integer.parseInt(coords[0]); /// надо разобраться, как это передавать
-            cords[1] = Integer.parseInt(coords[1]);
-            cords[2] = Integer.parseInt(coords[2]);
-            System.out.println("EEEEEEEEEE " + cords[0]);
-            return cords;
+            int numArr[] = new int[coords.length];
+            for (int i = 0; i < coords.length; i++) {
+                numArr[i] = Integer.parseInt(coords[i]);
+            }
+            return numArr;
         }
         return null;
     }

@@ -28,7 +28,6 @@ public class Main
                     debug = bf1.readLine();
                 }
                 bf1.close();
-                System.out.println("\n\nELEMENTS --> " + x.Flyable.size() + "\nVAL ---> " + x.Flyable.get(1));
                 checkStatusWeather(x);            
             } catch (IOException e) {
                 e.printStackTrace();
